@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shift Created</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="Blue Minimalist Simple Technology Logo .jpg" alt="Logo" class="logo">
+    </div>
+    <ul class="navbar-list">
+      <li><a href="help.html">Help</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Company</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Shift Created</h1>
+    </header>
+
+    <div class="shift-details">
+      <h2>Shift Details for Worker</h2>
+      <p><strong>Work Role:</strong> <span id="work-role"></span></p>
+      <p><strong>Location:</strong> <span id="location"></span></p>
+      <p><strong>Start Date:</strong> <span id="start-date"></span></p>
+      <p><strong>End Date:</strong> <span id="end-date"></span></p>
+      <p><strong>Start Time:</strong> <span id="start-time"></span></p>
+      <p><strong>End Time:</strong> <span id="end-time"></span></p>
+      <p><strong>Assigned Workers:</strong> <span id="workers"></span></p>
+    </div>
+
+    <div class="form-actions">
+      <button onclick="clearSessionAndGoBack()">Back</button>
+    </div>
+    <script>
+      function clearSessionAndGoBack() {
+        // Clear sessionStorage when the back button is clicked
+        sessionStorage.clear();
+    
+        // Go back to the previous page
+        window.history.back();
+      }
+    </script>
+  </div>
+
+  <script>
+    // Retrieve data from sessionStorage with fallback to "Data not available" if not present
+    document.getElementById('work-role').textContent = sessionStorage.getItem('workRole') || 'Data not available';
+    document.getElementById('location').textContent = sessionStorage.getItem('location') || 'Data not available';
+    document.getElementById('start-date').textContent = sessionStorage.getItem('startDate') || 'Data not available';
+    document.getElementById('end-date').textContent = sessionStorage.getItem('endDate') || 'Data not available';
+    document.getElementById('start-time').textContent = sessionStorage.getItem('startTime') || 'Data not available';
+    document.getElementById('end-time').textContent = sessionStorage.getItem('endTime') || 'Data not available';
+    
+    // For workers, ensure the value is an array before attempting to join it
+    const workers = sessionStorage.getItem('workers');
+    document.getElementById('workers').textContent = workers ? JSON.parse(workers).join(', ') : 'Data not available';
+  </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a7390;;
+  color: #333;
+}
+
+body {
+  background-image: url('OIP.jpg'); /* Path to your image */
+  background-size: cover; /* Scale image to cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  margin: 0;
+
+}
+/* Navbar styling */
+.navbar {
+  background-color: #150580df; /* Dark background for the navbar */
+  padding: 10px 0; /* Padding for space around the links */
+  position: absolute; /* Fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is on top of other content */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between logo and navbar items */
+  align-items: center; /* Align items vertically */
+  animation: fadeInNavbar 3s ease-out 0.4s forwards; 
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center; /* Center the logo vertically */
+  margin-left: 70px; /* Space from the left side */
+  animation: slideInLogo 3s ease-out 1s forwards;
+}
+
+.logo {
+  width: 100px; /* Adjust the size of the logo */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 60px; /* Circular logo */
+}
+
+.navbar-list {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Use flexbox to align navbar items horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-list li {
+  margin: 0 30px; /* Space between nav items */
+  opacity: 0;  /* Initially hidden */
+  animation: slideInNavItems 2s ease-out forwards; /* Slide in navbar items */
+}
+
+.navbar-list li:nth-child(1) {
+  animation-delay: 1.7s; /* Delay for each item */
+}
+
+.navbar-list li:nth-child(2) {
+  animation-delay: 2.0s;
+}
+
+.navbar-list li:nth-child(3) {
+  animation-delay: 2.5s;
+}
+
+.navbar-list li a {
+  color: white; /* White text for the nav links */
+  font-size: 20px; /* Set font size */
+}
+
+.navbar-list li a:hover {
+  color: #ff6600; /* Color on hover */
+}
+
+/* Animations */
+
+/* Navbar fade-in */
+@keyframes fadeInNavbar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Logo sliding in from left */
+@keyframes slideInLogo {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Navbar items sliding in */
+@keyframes slideInNavItems {
+  0% {
+    transform: translateX(30px); /* Slide from right */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: center; /* Center items vertically */
+  }
+
+  .navbar-list {
+    flex-direction: column; /* Stack list items vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .navbar-list li {
+    margin: 10px 0; /* Space between items */
+  }
+
+  .navbar-list li a {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 150px auto;
+  background-color:rgb(207, 226, 239);
+  background-image: url('hh.jpg'); /* Path to your image */
+  background-size: cover; /* Scale image to cover the entire area */
+  background-position: center; /* Center the image */
+  
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #0a7390;
+  margin: 0;
+}
+#message-container {
+  background-color: #f7fbf600; /* Light gray background */
+  color: #2ce74bc8; /* Text color */
+  
+  padding: 10px; /* Add padding */
+  margin-top: 50px; /* Add space from the element above */
+  font-size: 25px; /* Font size */
+  font-family: Arial, sans-serif; /* Font style */
+  display: block; /* Initially hidden */
+  
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in/out */
+}
+
+#message-container.show {
+  opacity: 1; /* Fully visible when the "show" class is added */
+}
+
+
+
+/* Form Styles */
+.work-shift-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color:  #0a7390;
+  box-shadow: 0 0 4px  #0a7390;
+}
+input:hover, select:hover {
+  border-color: #005bb5;
+  box-shadow: 0 0 4px rgba(0, 91, 181, 0.5);
+}
+
+
+/* Checkbox Group */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+}
+
+/* Multi-Select Dropdown */
+select[multiple] {
+  height: 100px;
+}
+
+/* Submit Button */
+.form-actions {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.submit-button {
+  background-color:  #0a7390;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #005bb5;
+}

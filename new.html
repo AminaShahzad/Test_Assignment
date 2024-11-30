@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a New Work Shift</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="java.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="Blue Minimalist Simple Technology Logo .jpg" alt="Logo" class="logo">
+    </div>
+    <ul class="navbar-list">
+      <li><a href="help.html">Help</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about company.html">About Company</a></li>
+    </ul>
+  </nav>
+ 
+  <div class="container">
+    <header>
+      <h1>Create a New Work Shift</h1>
+    </header>
+
+    <!-- Added id="work-shift-form" to the form -->
+    <form id="work-shift-form" class="work-shift-form">
+      <!-- Work Role -->
+      <div class="form-group">
+        <label for="work-role">Work Role</label>
+        <select id="work-role" name="work-role">
+          <option value="" disabled selected>Select a role</option>
+          <option value="loader">Loader</option>
+          <option value="supervisor">Supervisor</option>
+          <option value="labor">Labor</option>
+        </select>
+      </div>
+
+      <!-- Location -->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <select id="location" name="location">
+          <option value="" disabled selected>Select a location</option>
+          <option value="warehouse-1">Warehouse 1</option>
+          <option value="warehouse-2">Warehouse 2</option>
+        </select>
+      </div>
+
+      <!-- Date Pickers -->
+      <div class="form-group">
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" name="start-date">
+      </div>
+      <div class="form-group">
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" name="end-date">
+      </div>
+
+      <!-- Time Select -->
+      <div class="form-group">
+        <label for="start-time">Shift Start Time</label>
+        <input type="time" id="start-time" name="start-time">
+      </div>
+      <div class="form-group">
+        <label for="end-time">Shift End Time</label>
+        <input type="time" id="end-time" name="end-time">
+      </div>
+
+      <!-- Repeat Selector -->
+      <div class="form-group">
+        <label for="repeat">Repeat Every</label>
+        <select id="repeat" name="repeat">
+          <option value="" disabled selected>Select a frequency</option>
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+        </select>
+      </div>
+
+      <!-- Days Select -->
+      <div class="form-group">
+        <label>Days</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="days" value="monday"> Monday</label>
+          <label><input type="checkbox" name="days" value="tuesday"> Tuesday</label>
+          <label><input type="checkbox" name="days" value="wednesday"> Wednesday</label>
+          <label><input type="checkbox" name="days" value="thursday"> Thursday</label>
+          <label><input type="checkbox" name="days" value="friday"> Friday</label>
+          <label><input type="checkbox" name="days" value="saturday"> Saturday</label>
+          <label><input type="checkbox" name="days" value="sunday"> Sunday</label>
+        </div>
+      </div>
+
+      <!-- Assign Workers -->
+      <div class="form-group">
+        <label for="assign-workers">Assign Workers</label>
+        <select id="assign-workers" name="assign-workers" multiple>
+          <option value="worker-1">Worker 1</option>
+          <option value="worker-2">Worker 2</option>
+          <option value="worker-3">Worker 3</option>
+        </select>
+      </div>
+      <div id="message-container"></div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit" class="submit-button">Create Shift</button>
+      </div>
+      
+    </form>
+  </div>
+</body>
+</html>
